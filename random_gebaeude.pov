@@ -61,7 +61,7 @@ merge{
 
  union{
                                    
-    box { <0.00, 0.00, 0.00>,< 2.30, 2.50, 2.70>
+    box { <0.00, 0.00, 0.00>,< 2.30, 2.20, 2.70>
     
         texture { pigment{ color White } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
@@ -72,7 +72,7 @@ merge{
         } // end of box --------------------------------------
 
     
-    box { <0.10, 0.00, 0.10>,< 2.20, 2.40, 2.60>    
+    box { <0.10, 0.00, 0.10>,< 2.20, 2.10, 2.60>    
         
         
           texture { pigment{ color White transmit 1 } //  light orange
@@ -92,7 +92,7 @@ merge{
 
   // Tür ----
 
-    box { <0.96, 0.00, 0.00>, <1.51, 0.60, 0.10>   
+    box { <1.00, 0.00, 0.00>, <1.47, 0.50, 0.10>   
         
           texture { pigment{ color White transmit 1 } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
@@ -102,7 +102,7 @@ merge{
    
    // Tür 2 ----
 
-    box { <0.96, 1.10, 0.00>, <1.51, 1.70, 0.10>   
+    box { <1.00, 1.10, 0.00>, <1.47, 1.60, 0.10>   
         
           texture { pigment{ color White transmit 1 } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
@@ -282,7 +282,12 @@ box { <0.00, 1.35, -0.57>, <0.03, 1.38, 0.00>
 
  
 // Schild  ---------------------------------------------------------------
+ 
+#declare Schild = 
 
+merge { 
+ 
+ 
 intersection{
 
 box { <0.55, 1.95, -0.005>, <1.85, 2.45, 0.00>
@@ -355,7 +360,9 @@ text{
     } 
  
  
- 
+}
+
+object {Schild translate <0,-0.30, 0> }
  
  
  
