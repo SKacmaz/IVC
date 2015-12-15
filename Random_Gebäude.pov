@@ -52,7 +52,10 @@ box { <0.00, 0.00, -0.60>, <2.30, 0.15, 2.70>
                // end of texture                                  
     }                               
 */                                   
+#declare light_wood1 = pigment { P_WoodGrain7A color_map { M_Wood7A } rotate <0,  90,0>}
 
+#declare board_length = 0.25;
+#declare board_width = 1.5;
 // Saloon-Körper ----------------------------------------------------------
 
 merge{
