@@ -18,10 +18,10 @@ light_source{<1000,3000,-2500> color White}
 
 
 
-#declare light_wood = pigment { P_WoodGrain7A color_map { M_Wood7A } rotate <0,  90,0>}
+#declare light_wood = pigment { P_WoodGrain7A color_map { M_Wood7A } }
 
-#declare board_length = 0.25;
-#declare board_width = 1.5;
+#declare board_length = 1.5;
+#declare board_width = 0.25;
 
 box { <-10,-1,-10> <10,0,10> 
       pigment { light_wood 
