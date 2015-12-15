@@ -9,8 +9,8 @@ global_settings{assumed_gamma 1.0}
 
 //------------------------------------------
 // camera ----------------------------------
-camera{ location  <3.0 , 1.2 ,-2.5>
-        look_at   <1.0 , 1 , 0.0>
+camera{ location  <2.5 , 1.2 ,-2.5>
+        look_at   <1.0 , 1.2 , 0.0>
         right x*image_width/image_height
         angle 75 }
 // sun -------------------------------------
@@ -39,7 +39,7 @@ plane{ <0,1,0>, 0
                 finish { phong 0.1 } 
               } // end of texture
      } // end of plane                                  
- 
+/* 
 // Boden  ----------------------------------------------------------
  
 box { <0.00, 0.00, -0.60>, <2.30, 0.15, 2.70> 
@@ -51,7 +51,7 @@ box { <0.00, 0.00, -0.60>, <2.30, 0.15, 2.70>
  
                // end of texture                                  
     }                               
-                                   
+*/                                   
 
 // Saloon-Körper ----------------------------------------------------------
 
@@ -59,7 +59,7 @@ merge{
 
  union{
                                    
-    box { <0.00, 0.15, 0.00>,< 2.30, 2.50, 2.70>
+    box { <0.00, 0.00, 0.00>,< 2.30, 2.20, 2.70>
     
         texture { pigment{ color White } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
@@ -70,7 +70,7 @@ merge{
         } // end of box --------------------------------------
 
     
-    box { <0.10, 0.15, 0.10>,< 2.20, 2.40, 2.60>    
+    box { <0.10, 0.00, 0.10>,< 2.20, 2.10, 2.60>    
         
         
           texture { pigment{ color White transmit 1 } //  light orange
@@ -88,18 +88,30 @@ merge{
      
       } 
 
-// Tür ----
+  // Tür ----
 
-    box { <0.96, 0.15, 0.00>, <1.51, 0.60, 0.10>   
+    box { <1.00, 0.00, 0.00>, <1.47, 0.50, 0.10>   
         
           texture { pigment{ color White transmit 1 } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
                    finish { phong 1 reflection 0.00}
                  } // end of texture
         }       
+   
+   // Tür 2 ----
 
-
-// Fenster ----- 
+    box { <1.00, 1.10, 0.00>, <1.47, 1.60, 0.10>   
+        
+          texture { pigment{ color White transmit 1 } //  light orange
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture
+        } 
+   
+   
+   
+   /*
+  // Fenster ----- 
 
     box { <0.30, 1.40, 0.00>, <0.70, 1.80, 0.10>  
         
@@ -116,7 +128,7 @@ merge{
                    finish { phong 1 reflection 0.00}
                  } // end of texture
         }
-   
+     */
    
 }
 
@@ -135,7 +147,7 @@ box { <0.00, 1.05, -0.60>, <2.30, 1.10, 0.00>
   
 // Balken-rechtsaußen   ----------------------------------------------------------
 
-box { <2.24, 1.05, -0.60>, <2.29, 0.15, -0.55> 
+box { <2.24, 1.05, -0.60>, <2.29, 0.00, -0.55> 
        
         texture { pigment{ color White } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
@@ -147,7 +159,7 @@ box { <2.24, 1.05, -0.60>, <2.29, 0.15, -0.55>
 
 // Balken-linksaußen    ----------------------------------------------------------
 
-box { <0.01, 1.05, -0.60>, <0.06, 0.15, -0.55> 
+box { <0.01, 1.05, -0.60>, <0.06, 0.00, -0.55> 
        
         texture { pigment{ color White } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
@@ -159,7 +171,7 @@ box { <0.01, 1.05, -0.60>, <0.06, 0.15, -0.55>
   
 // Balken-linksinnen    ----------------------------------------------------------
 
-box { <0.81, 1.05, -0.60>, <0.86, 0.15, -0.55> 
+box { <0.81, 1.05, -0.60>, <0.86, 0.00, -0.55> 
        
         texture { pigment{ color White } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
@@ -172,7 +184,7 @@ box { <0.81, 1.05, -0.60>, <0.86, 0.15, -0.55>
 
 // Balken-rechtsinnen    ----------------------------------------------------------
 
-box { <1.61, 1.05, -0.60>, <1.66, 0.15, -0.55> 
+box { <1.61, 1.05, -0.60>, <1.66, 0.00, -0.55> 
        
         texture { pigment{ color White } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
@@ -184,7 +196,7 @@ box { <1.61, 1.05, -0.60>, <1.66, 0.15, -0.55>
   
  
  
-  
+/*  
 // Treppe    ----------------------------------------------------------
 
 box { <0.86, 0.00, -0.66>, <1.61, 0.10, -0.60> 
@@ -207,52 +219,148 @@ box { <0.86, 0.00, -0.71>, <1.61, 0.05, -0.60>
                // end of texture                                  
     } 
 
+*/
+// Geländer ---------------------------------------------------------------------
+
+
+#declare GBalken =
+box { <0.00, 1.10, -0.60>, <0.03, 1.35, -0.57> 
+       
+        texture { pigment{ color White } //  light orange
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+ 
+               // end of texture                                  
+    }
+
+
+#declare i = 0;
+#declare end_i  = 2.27;
+
+#while (i <= end_i)
+       object{ GBalken translate <i, 0, 0> }
+
+#declare i = i + 0.324;
+ 
+
+#end
+
+
+box { <0.00, 1.35, -0.60>, <2.30, 1.38, -0.57> 
+       
+        texture { pigment{ color White } //  light orange
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+ 
+               // end of texture                                  
+    }
+
+box { <2.27, 1.35, -0.57>, <2.30, 1.38, 0.00> 
+       
+        texture { pigment{ color White } //  light orange
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+ 
+               // end of texture                                  
+    }
+
+box { <0.00, 1.35, -0.57>, <0.03, 1.38, 0.00> 
+       
+        texture { pigment{ color White } //  light orange
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+ 
+               // end of texture                                  
+    }
+
 
  
-// SALOON_Schild  ---------------------------------------------------------------
+// Schild  ---------------------------------------------------------------
+ 
+#declare Schild = 
 
+merge { 
+ 
+ 
 intersection{
 
-box { <0.35, 1.95, -0.005>, <2.05, 2.45, 0.00>
-
-                texture{ T_Wood12    
-                finish { phong 1 } 
-                rotate<0,0,0> scale 0.5 translate<0,0,0>
+box { <0.55, 1.95, -0.005>, <1.85, 2.45, 0.00>
+      
+      
+                texture{ Rosewood     
+                //normal { wood 0.5 scale 0.3 rotate<0,90,0> turbulence 0.1}
+                finish { phong 1} 
+                rotate<60,0,45> scale 0.5
               } // end of texture 
+
+    
+    
+    
     }
 
 
 
-box { <0.45, 2.00, -0.006>, <1.95, 2.40, 0.00> inverse
+box { <0.65, 2.00, -0.006>, <1.75, 2.40, 0.00> inverse
 
-              texture{ T_Wood30    
-                normal { wood 0.5 scale 0.05 turbulence 0.0 rotate<0,0,0> }
-                finish { phong 1 } 
-                rotate<0,0,0> scale 0.5 translate<0,0,0>
-              } // end of texture 
- 
- 
- 
-    }
+            texture{ // ----------------------------------------   
+            pigment{ wood turbulence 0.02 octaves 4 lambda 3
+                     scale 0.175  rotate <2, 3, 0> 
+                     color_map {
+                        [0.0 color rgb <1.00, 0.88, 0.54>]
+                        [0.1 color rgb <1.00, 0.80, 0.54>]
+                        [0.5 color rgb <0.70, 0.42, 0.23>]
+                        [0.7 color rgb <0.70, 0.42, 0.23>]
+                        [1.0 color rgb <1.00, 0.88, 0.54>]
+                     }// end of color_map
+                   } // end of pigment
+            // normal { agate 0.5 scale 0.25} 
+            finish { phong 1 } 
+            rotate <0,0, 0>  scale 1  translate <0,0,0>
+        } // end of texture ---------------------------------
+   }
 }
+
 
 text{
    ttf "saloonext th.ttf",
-   "SALOON",0.1, 0
-            texture{ T_Wood12    
+   "BOB ROSS",0.1, 0
+            
+              texture{ T_Wood24    
+                normal { wood 0.5 scale 0.05 turbulence 0.1 rotate<0,0,0> }
                 finish { phong 1 } 
                 rotate<0,0,0> scale 0.5 translate<0,0,0>
-              } // end of texture  
-
-  scale<0.3, 0.3, 0.1>
-  translate<0.5,2.1,-0.015> 
+                     } // end of texture 
+ 
   
-  } 
+
+  scale<0.15, 0.15, 0.1>
+  translate<0.75,2.24,-0.015> 
+  
+    } 
+ 
+text{
+   ttf "saloonext th.ttf",
+   "FAN CLUB",0.1, 0
+            
+            texture{ T_Wood24    
+                normal { wood 0.5 scale 0.05 turbulence 0.1 rotate<0,0,0> }
+                finish { phong 1 } 
+                rotate<0,0,0> scale 0.5 translate<0,0,0>
+                     } // end of texture  
+
+  scale<0.15, 0.15, 0.1>
+  translate<0.75,2.05,-0.015> 
+  
+    } 
  
  
- 
- 
- 
+}
+
+object {Schild translate <0,-0.30, 0> }
  
  
  
