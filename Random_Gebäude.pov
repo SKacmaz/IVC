@@ -64,10 +64,15 @@ merge{
                                    
     box { <0.00, 0.00, 0.00>,< 2.30, 2.20, 2.70>
     
-        texture { pigment{ color White } //  light orange
-                // normal { bumps 0.5 scale 0.05 }
-                   finish { phong 1 reflection 0.00}
-                 } // end of texture
+        pigment { light_wood1 
+                warp { repeat board_length*z offset 0.5*y } 
+                warp { repeat board_width*x offset board_length*5/2*z } }
+      normal { boxed
+               slope_map { [ 0.5 <1,0> ] [1.0 <0,0> ] } 
+               bump_size 0.1
+               scale <board_width,1,board_length>
+               warp { repeat board_length*z  } 
+               warp { repeat board_width*x offset board_length/2*z } }
 
           // scale <1,1,1> rotate<0,0,0> translate<0,0,0> 
         } // end of box --------------------------------------
