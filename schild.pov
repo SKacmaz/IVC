@@ -133,9 +133,9 @@ union{
   object{one}
   object{two}
   object{three}
-  object{wanted1}
-  object{wanted2}
-  object{wanted3}
+  object{wanted1 scale <0.8,0.8,1> translate<-0.15,0.25, 0>}
+  object{wanted2 scale <0.8,0.8,1> translate<0,0.35, 0>}
+  object{wanted3 scale <0.8,0.8,1> translate<0.2,0.2, 0>}
 }        
 
                    
