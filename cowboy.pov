@@ -18,12 +18,13 @@ global_settings{ assumed_gamma 1.0 }
 #include "functions.inc"
 #include "math.inc"
 #include "transforms.inc"
+#include "waffe.inc"
 //--------------------------------------------------------------------------
 // camera ------------------------------------------------------------------
 #declare Camera_0 = camera {/*ultra_wide_angle*/ angle 75      // front view
-                            location  <0.0 , 1.0 ,-3.0>
+                            location  <1.0 , 5.0 ,-3.0>
                             right     x*image_width/image_height
-                            look_at   <0.0 , 1.0 , 0.0>}
+                            look_at   <1.0 , 2.0 , 0.0>}
 #declare Camera_1 = camera {/*ultra_wide_angle*/ angle 90   // diagonal view
                             location  <2.0 , 2.5 ,-3.0>
                             right     x*image_width/image_height
@@ -33,12 +34,12 @@ global_settings{ assumed_gamma 1.0 }
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
 #declare Camera_3 = camera {/*ultra_wide_angle*/ angle 90        // top view
-                            location  <0.0 , 3.0 ,-0.001>
+                            location  <-3.0 , 1.0 , 0>
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
-camera{Camera_1}
+camera{Camera_3}
 // sun ---------------------------------------------------------------------
-light_source{<-1500,2500,-2500> color White}
+light_source{<-15,10,-15> color White}
 // sky ---------------------------------------------------------------------
 sky_sphere { pigment { gradient <0,1,0>
                        color_map { [0.00 rgb <1.0,1.0,1.0>]
@@ -68,83 +69,84 @@ plane{ <0,1,0>, 0
 //--------------------------------------------------------------------------
 
 #declare T0 = texture { T_Wood19 }
+#declare hemdfarbe1 = color rgb<0.1, 0.1, 0.1>;
+#declare hosenfarbe1 = Black;
+#declare schuhfarbe1 = VeryDarkBrown;
+#declare haut = color rgb<0.402 ,0.209 , 0.064>;
 
 
+
+//---------------------------- cowboy1 in scene ----------------------------
             
+
 #declare fuss   =  
 box { <0, 0, 0>,
       <2, 1,  3>
-      texture{T0}}  
+      pigment{schuhfarbe1} }  
                          
                          
 #declare ubein   =
 cylinder { <0, 0,  0>,
            < 0, 2,  0>, 0.75
-           texture{T0} }
+           pigment{hosenfarbe1} }
                                      
 
 
 #declare knie =
 sphere{ <0,0,0>, 0.75
-        texture{T0}
+        pigment{hosenfarbe1}
       } 
            
 #declare fussgelenk =
 sphere{ <0,0,0>, 0.75
-        texture{T0}
+        pigment{hosenfarbe1}
       }
 
 #declare beckengelenk =
 sphere{ <0,0,0>, 0.75
-        texture{T0}
+        pigment{hosenfarbe1}
       }        
 
 
 #declare obein   =
 cylinder { <0, 0,  0>,
            < 0, 2,  0>, 0.75
-           texture{T0} }
+           pigment{hosenfarbe1} }
            
 #declare hose   =  
 box { <0, 0, 0>,
-      <6.5, 2,  2>
-      pigment{Blue}}
+      <5, 2,  2>
+      pigment{hosenfarbe1}}
       
 #declare hemd   =  
 box { <0, 0, 0>,
-      <6.5, 4,  2>
-      pigment{Red}}        
+      <5, 4,  2>
+      pigment{hemdfarbe1}}        
 
 #declare schultergelenk   =  
 sphere{ <0,0,0>, 0.6
-        texture{T0}
+        pigment{hemdfarbe1}
       }         
 
 #declare oarm   =  
 cylinder { <0, 0, 0>,
       <0, 2,  0>, 0.6
-      texture{T0}}  
+      pigment{hemdfarbe1}}  
 
 #declare armgelenk   =  
 sphere{ <0,0,0>, 0.6
-        texture{T0}
+        pigment{hemdfarbe1}
       }         
 
 #declare uarm   =  
 cylinder { <0, 0, 0>,
       <0, 2,  0>, 0.6
-      texture{T0}}  
+      pigment{hemdfarbe1}}  
 
 #declare hand   =  
 box { <0, 0, 0>,
       <1.3, 1.3, 1.3>
-      texture{T0}}  
-
-  
-
-
-
-
+      pigment{haut}}  
                    
 #declare bein =
 union{
@@ -168,7 +170,15 @@ union{
 #declare uarmhand =
 union{
   object{uarm scale <0,0,0> translate<0,0,0>}
+  object{hand scale <0,0,0> rotate<0,0,0> translate<-0.65,-1.3,-0.65>} 
+
+}
+
+#declare uarmwaffenhand =
+union{
+  object{uarm scale <0,0,0> translate<0,0,0>}
   object{hand scale <0,0,0> rotate<0,0,0> translate<-0.65,-1.3,-0.65>}
+  object{waffe rotate<0,270,0> rotate<270,0,0> scale<0.3,0.3,0.3> translate<0,-1.732,-0.15>  } 
   
 
 }
@@ -188,47 +198,30 @@ union{
                     
 
 
+#declare armr =
+union{                                                   
+  object{armrotate  rotate<0,0,-30> translate<0,0,0> }
+  object{uarmwaffenhand  rotate<0,0,0> translate<-1,-2-1.732,0> }
+}
+
 #declare arml =
 union{                                                   
   object{armrotate  rotate<0,0,-30> translate<0,0,0> }
   object{uarmhand  rotate<0,0,0> translate<-1,-2-1.732,0> }
+  
 }
 
-#declare armr =
-union{                                                   
-  object{armrotate  rotate<0,0,-30> translate<0,0,0> }
-  object{uarmhand  rotate<0,0,0> translate<-1,-2-1.732,0> }
-}
 
 #declare hals   =  
 cylinder { <0, 0, 0>,
       <0, 0.5,  0>, 0.8
-      texture{T0}}
+      pigment{haut}}
 
-#declare kopf1   =  
-box { <0, 0, 0>,
-      <2, 2, 2>
-      texture{T0}}
-
-#declare auge1   =  
-box { <0, 0, 0>,
-      <0.2, 0.2, 0.2>
-      pigment{Black}}
-                     
-#declare nase1   =  
-box { <0, 0, 0>,
-      <0.2, 0.2, 0.2>
-      pigment{Black}}
-
-#declare mund1   =  
-box { <0, 0, 0>,
-      <0.8, 0.2, 0.2>
-      pigment{Black}}
 
 
 #declare kopf2   =  
 sphere { <0, 0, 0>, 1.4
-      texture{T0}}
+      pigment{haut}}
       
 #declare auge2   =  
 sphere { <0, 0, 0>, 0.1
@@ -242,15 +235,7 @@ sphere { <0, 0, 0>, 0.1
 sphere { <0, 0, 0>, 0.1
       pigment{Black}}
 
-#declare kopfklotz =
-union{
-                                                   
-  object{kopf1  rotate<0,0,0> translate<0,0,0> }
-  object{auge1  rotate<0,0,0> translate<0.4,1.4,-0.1> }
-  object{auge1  rotate<0,0,0> translate<1.4,1.4,-0.1> }
-  object{nase1  rotate<0,0,0> translate<0.9,0.9,-0.1> }
-  object{mund1  rotate<0,0,0> translate<0.6,0.4,-0.1> }
-}
+
 
 #declare kopfrund =
 union{
@@ -261,49 +246,41 @@ union{
   object{nase2  translate<0,0,-1.4> rotate<0,0,0> }
   object{mund2  translate<0,0,-1.4> rotate<-15,5,0> }
   object{mund2  translate<0,0,-1.4> rotate<-15,-5,0> }
-  object{mund2  translate<0,0,-1.4> rotate<-10,10,0> }
-  object{mund2  translate<0,0,-1.4> rotate<-10,-10,0> }
+  object{mund2  translate<0,0,-1.4> rotate<-16,10,0> }
+  object{mund2  translate<0,0,-1.4> rotate<-16,-10,0> }
   object{mund2  translate<0,0,-1.4> rotate<-15,0,0> }
 }
                                                    
 
-#declare bodyklotz =
-union{
-                                                   
-  object{hemd  rotate<0,0,0> translate<0,2,0> }
-  object{hose  rotate<0,0,0> translate<0,0,0> }
-  object{bein  rotate<0,0,0> translate<1.5,0,1> }
-  object{bein  rotate<0,0,0> translate<4.5,0,1> }
-  object{arml  rotate<0,0,0> translate<0,5,0.8> }
-  object{armr  rotate<0,180,0> translate<6.5,5,0.8> }
-  object{hals rotate<0,0,0> translate<3.25,6,0.8>}
-  object{kopfklotz rotate<0,0,0> translate<2.25,6.5,0> }
-  
-}
 
 #declare bodyrund =
 union{
                                                    
   object{hemd  rotate<0,0,0> translate<0,2,0> }
   object{hose  rotate<0,0,0> translate<0,0,0> }
-  object{bein  rotate<0,0,0> translate<1.5,0,1> }
-  object{bein  rotate<0,0,0> translate<4.5,0,1> }
-  object{arml  rotate<0,0,0> translate<0,5,0.8> }
-  object{armr  rotate<0,180,0> translate<6.5,5,0.8> }
-  object{hals rotate<0,0,0> translate<3.25,6,0.8>}
-  object{kopfrund rotate<0,0,0> translate<3.25,7.5,1> }
+  object{bein  rotate<0,0,0> translate<1.3,0,1> }
+  object{bein  rotate<0,0,0> translate<3.7,0,1> }
+  object{armr  rotate<0,0,0> translate<0,5,0.8> }
+  object{arml  rotate<0,180,0> translate<5,5,0.8> }
+  object{hals rotate<0,0,0> translate<2.5,6,0.8>}
+  object{kopfrund rotate<0,0,0> translate<2.5,7.5,1> }
   
 }   
 
 
-#declare bodya =
-union{                                                   
-  object{bodyrund  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }
+#declare cowboy1 =                                                   
+  object{bodyrund  rotate<0,0,0> translate<0,6,5> scale <0.2,0.2,0.2> }
   
-}
+
+#declare waffe1 =                                                   
+  object{waffe  rotate<0,0,0> translate<0,1,0> scale <0.07,0.07,0.07> }
 
 
-bodya
+
+cowboy1  
+
+
+
 
 
 

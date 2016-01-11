@@ -108,12 +108,12 @@ cylinder { <0, 0,  0>,
 #declare hose   =  
 box { <0, 0, 0>,
       <6.5, 2,  2>
-      Blue}
+      pigment{Blue}}
       
 #declare hemd   =  
 box { <0, 0, 0>,
       <6.5, 4,  2>
-      Red}        
+      pigment{Red}}        
 
 #declare schultergelenk   =  
 sphere{ <0,0,0>, 0.6
@@ -199,9 +199,75 @@ union{
   object{armrotate  rotate<0,0,-30> translate<0,0,0> }
   object{uarmhand  rotate<0,0,0> translate<-1,-2-1.732,0> }
 }
+
+#declare hals   =  
+cylinder { <0, 0, 0>,
+      <0, 0.5,  0>, 0.8
+      texture{T0}}
+
+#declare kopf1   =  
+box { <0, 0, 0>,
+      <2, 2, 2>
+      texture{T0}}
+
+#declare auge1   =  
+box { <0, 0, 0>,
+      <0.2, 0.2, 0.2>
+      pigment{Black}}
+                     
+#declare nase1   =  
+box { <0, 0, 0>,
+      <0.2, 0.2, 0.2>
+      pigment{Black}}
+
+#declare mund1   =  
+box { <0, 0, 0>,
+      <0.8, 0.2, 0.2>
+      pigment{Black}}
+
+
+#declare kopf2   =  
+sphere { <0, 0, 0>, 1.4
+      texture{T0}}
+      
+#declare auge2   =  
+sphere { <0, 0, 0>, 0.1
+      pigment{Black}}
+      
+#declare mund2   =  
+sphere { <0, 0, 0>, 0.1
+      pigment{Black}}
+      
+#declare nase2   =  
+sphere { <0, 0, 0>, 0.1
+      pigment{Black}}
+
+#declare kopfklotz =
+union{
+                                                   
+  object{kopf1  rotate<0,0,0> translate<0,0,0> }
+  object{auge1  rotate<0,0,0> translate<0.4,1.4,-0.1> }
+  object{auge1  rotate<0,0,0> translate<1.4,1.4,-0.1> }
+  object{nase1  rotate<0,0,0> translate<0.9,0.9,-0.1> }
+  object{mund1  rotate<0,0,0> translate<0.6,0.4,-0.1> }
+}
+
+#declare kopfrund =
+union{
+                                                   
+  object{kopf2  rotate<0,0,0> translate<0,0,0> }
+  object{auge2  translate<0,0,-1.4> rotate<15,15,0>}
+  object{auge2  translate<0,0,-1.4> rotate<15,-15,0> }
+  object{nase2  translate<0,0,-1.4> rotate<0,0,0> }
+  object{mund2  translate<0,0,-1.4> rotate<-15,5,0> }
+  object{mund2  translate<0,0,-1.4> rotate<-15,-5,0> }
+  object{mund2  translate<0,0,-1.4> rotate<-10,10,0> }
+  object{mund2  translate<0,0,-1.4> rotate<-10,-10,0> }
+  object{mund2  translate<0,0,-1.4> rotate<-15,0,0> }
+}
                                                    
 
-#declare body =
+#declare bodyklotz =
 union{
                                                    
   object{hemd  rotate<0,0,0> translate<0,2,0> }
@@ -210,13 +276,29 @@ union{
   object{bein  rotate<0,0,0> translate<4.5,0,1> }
   object{arml  rotate<0,0,0> translate<0,5,0.8> }
   object{armr  rotate<0,180,0> translate<6.5,5,0.8> }
+  object{hals rotate<0,0,0> translate<3.25,6,0.8>}
+  object{kopfklotz rotate<0,0,0> translate<2.25,6.5,0> }
   
-}  
+}
+
+#declare bodyrund =
+union{
+                                                   
+  object{hemd  rotate<0,0,0> translate<0,2,0> }
+  object{hose  rotate<0,0,0> translate<0,0,0> }
+  object{bein  rotate<0,0,0> translate<1.5,0,1> }
+  object{bein  rotate<0,0,0> translate<4.5,0,1> }
+  object{arml  rotate<0,0,0> translate<0,5,0.8> }
+  object{armr  rotate<0,180,0> translate<6.5,5,0.8> }
+  object{hals rotate<0,0,0> translate<3.25,6,0.8>}
+  object{kopfrund rotate<0,0,0> translate<3.25,7.5,1> }
+  
+}   
 
 
 #declare bodya =
 union{                                                   
-  object{body  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }
+  object{bodyrund  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }
   
 }
 
