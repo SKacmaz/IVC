@@ -272,10 +272,6 @@ union{
   object{bodyrund  rotate<0,0,0> translate<0,6,5> scale <0.2,0.2,0.2> }
   
 
-#declare waffe1 =                                                   
-  object{waffe  rotate<0,0,0> translate<0,1,0> scale <0.07,0.07,0.07> }
-
-
 
 cowboy1  
 

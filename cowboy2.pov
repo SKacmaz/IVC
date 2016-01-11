@@ -30,14 +30,14 @@ global_settings{ assumed_gamma 1.0 }
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
 #declare Camera_2 = camera {/*ultra_wide_angle*/ angle 90 // right side view
-                            location  <3.0 , 1.0 , 0.0>
+                            location  <0.0 , 3.0 , -2.0>
                             right     x*image_width/image_height
-                            look_at   <0.0 , 1.0 , 0.0>}
+                            look_at   <0.0 , 2.0 , 0.0>}
 #declare Camera_3 = camera {/*ultra_wide_angle*/ angle 90        // top view
-                            location  <-3.0 , 3.0 ,-0.001>
+                            location  <-2.0 , 3.0 ,-2.0>
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
-camera{Camera_3}
+camera{Camera_1}
 // sun ---------------------------------------------------------------------
 light_source{<-15,10,-15> color White}
 // sky ---------------------------------------------------------------------
@@ -218,10 +218,33 @@ cylinder { <0, 0, 0>,
       <0, 0.5,  0>, 0.8
       pigment{haut}}
 
+
+
 #declare kopf1   =  
 box { <0, 0, 0>,
       <2, 2, 2>
       pigment{haut}}
+
+#declare tuch   =
+prism {0 , 0.1, 6
+       <0 , 1>,
+       <0 , 0.5>,
+       <1 , 0>,
+       <2 , 0.5>,
+       <2 , 1>,
+       <0 , 1>
+       pigment{Red}
+       } 
+       
+#declare tuchseite   =
+prism {0 , 0.1, 4
+       <0 , 1>,
+       <0 , 0.5>,
+       <1 , 1>,
+       <0 , 1>
+       pigment{Red}
+       }       
+       
 
 #declare auge1   =  
 box { <0, 0, 0>,
@@ -244,10 +267,13 @@ box { <0, 0, 0>,
 union{
                                                    
   object{kopf1  rotate<0,0,0> translate<0,0,0> }
+  object{tuch  rotate<270,0,0> translate<0,0,0> }
+  object{tuchseite  rotate<270,0,0> rotate<0,270,0> translate<-0.05,0,0> }
+  object{tuchseite  rotate<270,0,0> rotate<0,270,0> translate<-0.05+2,0,0> }
   object{auge1  rotate<0,0,0> translate<0.4,1.4,-0.1> }
   object{auge1  rotate<0,0,0> translate<1.4,1.4,-0.1> }
   object{nase1  rotate<0,0,0> translate<0.9,0.9,-0.1> }
-  object{mund1  rotate<0,0,0> translate<0.6,0.4,-0.1> }
+ 
 }
 
 
