@@ -18,8 +18,7 @@ global_settings{ assumed_gamma 1.0 }
 #include "functions.inc"
 #include "math.inc"
 #include "transforms.inc"
-#include "waffe.inc" 
-#include "hut.inc"
+#include "waffe.inc"
 
 #declare T0 = texture { T_Wood19 }
 #declare hemdfarbe1 = color rgb<0.1, 0.1, 0.1>;
@@ -192,7 +191,7 @@ sphere { <0, 0, 0>, 0.1
 
 #declare kopfrund =
 union{
-  object{hut  scale<1.2,1.2,1.2> translate<0,0.8,0> }                                                 
+                                                   
   object{kopf2  rotate<0,0,0> translate<0,0,0> }
   object{auge2  translate<0,0,-1.4> rotate<15,15,0>}
   object{auge2  translate<0,0,-1.4> rotate<15,-15,0> }

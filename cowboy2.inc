@@ -175,7 +175,7 @@ box { <0, 0, 0>,
 prism {0 , 0.1, 6
        <0 , 1>,
        <0 , 0.5>,
-       <1 , 0>,
+       <1 , -1>,
        <2 , 0.5>,
        <2 , 1>,
        <0 , 1>
@@ -211,7 +211,7 @@ box { <0, 0, 0>,
 
 #declare kopfklotz =
 union{
-                                                   
+  object{hut  rotate<0,0,0> translate<1,2,1> }                                                  
   object{kopf1  rotate<0,0,0> translate<0,0,0> }
   object{tuch  rotate<270,0,0> translate<0,0,0> }
   object{tuchseite  rotate<270,0,0> rotate<0,270,0> translate<-0.05,0,0> }

@@ -1,4 +1,4 @@
-// PoVRay 3.7 Scene File " ... .pov"
+                                                                    // PoVRay 3.7 Scene File " ... .pov"
 // author:  ...
 // date:    ...
 //--------------------------------------------------------------------------
@@ -22,28 +22,23 @@ global_settings{ assumed_gamma 1.0 }
 #include "cowboy2.inc"
 //--------------------------------------------------------------------------
 // camera ------------------------------------------------------------------
-//cowboyrund
 #declare Camera_0 = camera {/*ultra_wide_angle*/ angle 75      // front view
-                            location  <0.0 , 2.0 ,1.0>
+                            location  <0.0 , 1.0 ,-1.0>
                             right     x*image_width/image_height
-                            look_at   <0.0 , 2.0 , 0.0>}
-                            
-//plakat                            
+                            look_at   <0.0 , 0.0 , 0.0>}
 #declare Camera_1 = camera {/*ultra_wide_angle*/ angle 120   // diagonal view
-                            location  <1.0 , 2.0 ,-2.0>
+                            location  <1.0 , 1.5 ,-2.0>
                             right     x*image_width/image_height
                             look_at   <0.0 , 2.0 , 0.0>}
-                            
-//cowboyklotz                            
 #declare Camera_2 = camera {/*ultra_wide_angle*/ angle 90 // right side view
-                            location  <1.0 , 2.0 , 0.0>
+                            location  <3.0 , 1.0 , 0.0>
                             right     x*image_width/image_height
-                            look_at   <0.0 , 2.0 , 2.0>}
+                            look_at   <0.0 , 1.0 , 0.0>}
 #declare Camera_3 = camera {/*ultra_wide_angle*/ angle 90        // top view
                             location  <0.0 , 3.0 ,-0.001>
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
-camera{Camera_1}
+camera{Camera_0}
 // sun ---------------------------------------------------------------------
 light_source{<-1500,2500,-2500> color White}
 // sky ---------------------------------------------------------------------
@@ -74,16 +69,53 @@ plane{ <0,1,0>, 0
 //---------------------------- objects in scene ----------------------------
 //--------------------------------------------------------------------------
 
+#declare hutfarbe = color rgb<0.542,0.269,0.074>;
 
 
-
-                                                   
-  object{cowboy2  rotate<0,0,0> translate<0,0,2>  }
+#declare auschneiden   =  
+cylinder { <0, 0, 0>,
+      <0, 0.06,  0> 1.45   
+      pigment{hutfarbe}}
+      
+#declare hutflaeche   =  
+cylinder { <0, 0, 0>,
+      <0, 0.1,  0> 1.5
+      pigment{hutfarbe} }                          
+                         
+#declare hutmain   =
+cylinder { <0, 0,  0>,
+           < 0, 0.75,  0>, 1
+           pigment{hutfarbe} }
   
 
-                                       
-  object{cowboy1  rotate<0,180,0> translate<0,0,0>  }
+#declare hutschmuck   =
+cylinder { <0, 0,  0>,
+           < 0, 0.2,  0>, 1.05
+           pigment{Silver} }
+
+
+#declare hut   = 
+union{ 
+difference{
+  object{hutflaeche  translate<0,0,0>} 
+  object{auschneiden  translate<0,0.05,0>}
   
+  }
+  object{hutmain  translate<0,0,0>}
+  object{hutschmuck  translate<0,0.05,0>}
+
+
+}
+
+
+object{hut scale<0.2,0.2,0.2>}
+
+
+
+
+
+
+
 
 
 
