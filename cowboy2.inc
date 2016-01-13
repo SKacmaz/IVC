@@ -20,6 +20,12 @@ global_settings{ assumed_gamma 1.0 }
 #include "transforms.inc"
 #include "waffe.inc"
 
+#declare T0 = texture { T_Wood19 }
+#declare hemdfarbe1 = color rgb<0.1, 0.1, 0.1>;
+#declare hosenfarbe1 = Black;
+#declare schuhfarbe1 = VeryDarkBrown;
+#declare haut = color rgb<0.402 ,0.209 , 0.064>;
+
 
 
 //---------------------------- cowboy in scene ----------------------------

@@ -20,6 +20,9 @@ global_settings{ assumed_gamma 1.0 }
 #include "transforms.inc"
 #include "cowboy.inc"
 #include "cowboy2.inc"
+
+
+
 //--------------------------------------------------------------------------
 // camera ------------------------------------------------------------------
 //cowboyrund
@@ -29,7 +32,7 @@ global_settings{ assumed_gamma 1.0 }
                             look_at   <0.0 , 2.0 , 0.0>}
                             
 //plakat                            
-#declare Camera_1 = camera {/*ultra_wide_angle*/ angle 120   // diagonal view
+#declare Camera_1 = camera {/*ultra_wide_angle*/ angle 110   // diagonal view
                             location  <1.0 , 2.0 ,-2.0>
                             right     x*image_width/image_height
                             look_at   <0.0 , 2.0 , 0.0>}
@@ -75,12 +78,9 @@ plane{ <0,1,0>, 0
 //--------------------------------------------------------------------------
 
 
-
-
                                                    
   object{cowboy2bew  rotate<0,0,0> translate<0,0,2>  }
   
-
                                        
   object{cowboy1bew  rotate<0,180,0> translate<0,0,0>  }
   
