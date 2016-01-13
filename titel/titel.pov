@@ -23,32 +23,32 @@ light_source{<0,3000,-2500> color White}
 #declare titel_here =
 text{
    ttf "saloonext th.ttf",
-   "here",0.2, 0
+   "Sushi",0.2, 0
    texture { pigment{ color rgb< 1.0, 0.7, 0.25> } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
                    finish { phong 1 reflection 0.0 specular 1.0}
                  } // end of texture
-   translate <0,0,0> }
+   translate <1.8,1.2,0> }
 
 #declare titel_comes =
 text{
    ttf "saloonext th.ttf",
-   "comes",0.2, 0
+   "Western",0.2, 0
    texture { pigment{ color rgb< 1.0, 0.7, 0.25> } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
                    finish { phong 1 reflection 0.0 specular 1.0}
                  } // end of texture
-   translate <3.8,0,0> }
+   translate <0.8,0,0> }
 
 #declare titel_bush =   
 text{
    ttf "saloonext th.ttf",
-   "the bush",0.2, 0
+   "Style",0.2, 0
    texture { pigment{ color rgb< 1.0, 0.7, 0.25> } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
                    finish { phong 1 reflection 0.0 specular 1}
                  } // end of texture
-   translate <0.8,-1.2,0> }   
+   translate <1.8,-1.2,0> }   
              
 // -------------------------------------    ------------------------------------
 

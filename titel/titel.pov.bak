@@ -50,17 +50,37 @@ text{
                  } // end of texture
    translate <0.8,-1.2,0> }   
              
-// -------------------------------------------------------------------------
+// -------------------------------------    ------------------------------------
 
 
-
+#if(clock >= 0 & clock <1)
 object {titel_here
         translate <0,0,-8> + <0,0,8>*clock}
+#else
+object {titel_here
+        translate <0,0,-8> + <0,0,8>}
+#end
 
-                
+
+
+#if(clock >= 1 & clock <2)                
 object {titel_comes
-        translate <0,0,-8> + <0,0,8>*clock}
+        translate <0,0,-8> + <0,0,8>*(clock-1)}
+#else
+    #if(clock >= 2)
+    object {titel_comes
+            translate <0,0,-8> + <0,0,8>}
+    #end            
+#end
 
+
+
+#if(clock >= 2 & clock <3)
 object {titel_bush
-        translate <0,0,-8> + <0,0,8>*clock}
-
+        translate <0,0,-8> + <0,0,8>*(clock-2)}
+#else
+    #if(clock >= 3)
+    object {titel_bush
+            translate <0,0,-8> + <0,0,8>}
+    #end                
+#end
