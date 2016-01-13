@@ -218,12 +218,31 @@ union{
   object{hals rotate<0,0,0> translate<2.5,6,0.8>}
   object{kopfrund rotate<0,0,0> translate<2.5,7.5,1> }
   
-}   
+}
+
+#declare bodyrundbew =
+union{
+                                                   
+  object{hemd  rotate<0,0,0> translate<0,2,0> }
+  object{hose  rotate<0,0,0> translate<0,0,0> }
+  object{bein  rotate<0,0,0> translate<1.3,0,1> }
+  object{bein  rotate<0,0,0> translate<3.7,0,1> }
+  object{armr  rotate<(90*clock),0,0> translate<0,5,0.8> }
+  object{arml  rotate<0,180,0> translate<5,5,0.8> }
+  object{hals rotate<0,0,0> translate<2.5,6,0.8>}
+  object{kopfrund rotate<0,0,0> translate<2.5,7.5,1> }
+  
+}    
 
 
 #declare cowboy1 =                                                   
   object{bodyrund  rotate<0,0,0> translate<0,6,5> scale <0.2,0.2,0.2> }
   
+#declare cowboy1bew =                                                   
+  object{bodyrundbew  rotate<0,0,0> translate<0,6,5> scale <0.2,0.2,0.2> }
+  
+
+
 
 
 

@@ -131,13 +131,8 @@ union{
 
 }
 
-#declare arm =
-union{
-  object{schultergelenk scale <0,0,0> translate<0,0,0>}
-  object{oarm scale <0,0,0> rotate<0,0,0> translate<0,-2,0>}
-  object{armgelenk scale <0,0,0> translate<0,-2,0>}
 
-}
+
 
 
 
@@ -239,13 +234,27 @@ union{
   
 }
 
+#declare bodyklotzbewegung =
+union{
+                                                   
+  object{hemd  rotate<0,0,0> translate<0,2,0> }
+  object{hose  rotate<0,0,0> translate<0,0,0> }
+  object{bein  rotate<0,0,0> translate<1.5,0,1> }
+  object{bein  rotate<0,0,0> translate<4.5,0,1> }
+  object{armr  rotate<(90*clock),0,0> translate<0,5,0.8> }
+  object{arml  rotate<0,180,0> translate<6.5,5,0.8> }
+  object{hals rotate<0,0,0> translate<3.25,6,0.8>}
+  object{kopfklotz rotate<0,0,0> translate<2.25,6.5,0> }
+  
+}
 
 
 #declare cowboy2 =                                                  
   object{bodyklotz  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }
   
 
-
+#declare cowboy2bew =                                                  
+  object{bodyklotzbewegung  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }
 
 
 
