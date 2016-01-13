@@ -41,27 +41,27 @@ plane{ <0,1,0>, 0
      } // end of plane   
 // ------------------------------------------------------------------------------------
 
-#local I = -10;
-#local End_I  = 30;
+#local I = 0;
+#local End_I  = 5;
 
 #while (I <= End_I)
-       object{ blancobuilding translate <I, 0, 0>  }
+       object{ blancobuilding translate <I*4-2, 0, 0>  }
 
-#local I = I + 3;
+#local I = I + 1;
  
 
 #end
 
 
 #local K = 0;
-#local End_K  = 30;
+#local End_K  = 5;
 
 
 #while (K <= End_K)
-       object{ blancobuilding translate <K, 0, -10>}
+       object{ blancobuilding rotate<0,180,0> translate <K*4, 0, -8>}
        
 
-#local K = K + 3;
+#local K = K + 1;
 
 #end
 

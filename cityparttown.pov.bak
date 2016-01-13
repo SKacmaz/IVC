@@ -9,8 +9,8 @@ global_settings{assumed_gamma 1.0}
 
 //------------------------------------------
 // camera ----------------------------------
-camera{ location  <15.5 , 8 ,-20.5>
-        look_at   <15.0 , 1.2 , 0.0>
+camera{ location  <-8, 2 ,-4>
+        look_at   <30.0 , 2 , -5>
         right x*image_width/image_height
         angle 75 }
 // sun -------------------------------------
@@ -41,14 +41,27 @@ plane{ <0,1,0>, 0
      } // end of plane   
 // ------------------------------------------------------------------------------------
 
-#local i = 0;
-#local end_i  = 30;
+#local I = -10;
+#local End_I  = 30;
 
-#while (i <= end_i)
-       object{ blancobuilding translate <i, 0, 0> }
+#while (I <= End_I)
+       object{ blancobuilding translate <I, 0, 0>  }
 
-#local i = i +5;
+#local I = I + 3;
  
+
+#end
+
+
+#local K = 0;
+#local End_K  = 30;
+
+
+#while (K <= End_K)
+       object{ blancobuilding translate <K, 0, -10>}
+       
+
+#local K = K + 3;
 
 #end
 
