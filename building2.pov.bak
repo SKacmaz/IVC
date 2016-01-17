@@ -289,7 +289,7 @@ box { <0.65, 2.00, -0.006>, <1.75, 2.40, 0.00> inverse
 
 
 text{
-   ttf "saloonext th.ttf",
+   ttf "crystal.ttf",
    "BOB ROSS",0.1, 0
             
               texture{ T_Wood24    
@@ -306,7 +306,7 @@ text{
     } 
  
 text{
-   ttf "saloonext th.ttf",
+   ttf "crystal.ttf",
    "FAN CLUB",0.1, 0
             
             texture{ T_Wood24    

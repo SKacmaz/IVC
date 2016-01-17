@@ -39,32 +39,35 @@ plane{ <0,1,0>, 0
                 finish { phong 0.1 } 
               } // end of texture
      } // end of plane                                  
+// ----------------------------------------------------------
+
+#declare buildingcolor2 = texture {T_Wood7
+		                normal {wood 0.5 scale 0.05 turbulence 0.1 rotate<0,0,0> }
+		                finish {phong 1}
+		                rotate<0,0,0> scale 0.5 translate<0,0,0>};
+
+                                   
  
 // Boden  ----------------------------------------------------------
+#declare boden =
  
 box { <0.00, 0.00, -0.60>, <2.30, 0.15, 2.70> 
        
-        texture { pigment{ color White } //  light orange
-                // normal { bumps 0.5 scale 0.05 }
-                   finish { phong 1 reflection 0.00}
-                 } // end of texture 
+        texture { buildingcolor2} // end of texture 
  
                // end of texture                                  
     }                               
-                                   
+
 
 // Saloon-Körper ----------------------------------------------------------
-
+#declare koerper_sal = 
 merge{
 
  union{
                                    
     box { <0.00, 0.15, 0.00>,< 2.30, 2.50, 2.70>
     
-        texture { pigment{ color White } //  light orange
-                // normal { bumps 0.5 scale 0.05 }
-                   finish { phong 1 reflection 0.00}
-                 } // end of texture
+        texture { buildingcolor2} // end of texture
 
           // scale <1,1,1> rotate<0,0,0> translate<0,0,0> 
         } // end of box --------------------------------------
@@ -122,25 +125,22 @@ merge{
 
 
 // Vordach   ----------------------------------------------------------
-
+#declare vordach_sal =
 box { <0.00, 1.05, -0.60>, <2.30, 1.10, 0.00> 
        
-        texture { pigment{ color White } //  light orange
-                // normal { bumps 0.5 scale 0.05 }
-                   finish { phong 1 reflection 0.00}
-                 } // end of texture 
+        texture { buildingcolor2} // end of texture 
  
                // end of texture                                  
     }       
   
 // Balken-rechtsaußen   ----------------------------------------------------------
+#declare balken_sal =
+
+union{
 
 box { <2.24, 1.05, -0.60>, <2.29, 0.15, -0.55> 
        
-        texture { pigment{ color White } //  light orange
-                // normal { bumps 0.5 scale 0.05 }
-                   finish { phong 1 reflection 0.00}
-                 } // end of texture 
+        texture { buildingcolor2} // end of texture 
  
                // end of texture                                  
     }  
@@ -149,10 +149,7 @@ box { <2.24, 1.05, -0.60>, <2.29, 0.15, -0.55>
 
 box { <0.01, 1.05, -0.60>, <0.06, 0.15, -0.55> 
        
-        texture { pigment{ color White } //  light orange
-                // normal { bumps 0.5 scale 0.05 }
-                   finish { phong 1 reflection 0.00}
-                 } // end of texture 
+        texture { buildingcolor2} // end of texture 
  
                // end of texture                                  
     } 
@@ -161,10 +158,7 @@ box { <0.01, 1.05, -0.60>, <0.06, 0.15, -0.55>
 
 box { <0.81, 1.05, -0.60>, <0.86, 0.15, -0.55> 
        
-        texture { pigment{ color White } //  light orange
-                // normal { bumps 0.5 scale 0.05 }
-                   finish { phong 1 reflection 0.00}
-                 } // end of texture 
+        texture { buildingcolor2} // end of texture 
  
                // end of texture                                  
     }  
@@ -174,42 +168,41 @@ box { <0.81, 1.05, -0.60>, <0.86, 0.15, -0.55>
 
 box { <1.61, 1.05, -0.60>, <1.66, 0.15, -0.55> 
        
-        texture { pigment{ color White } //  light orange
-                // normal { bumps 0.5 scale 0.05 }
-                   finish { phong 1 reflection 0.00}
-                 } // end of texture 
+        texture { buildingcolor2} // end of texture 
  
                // end of texture                                  
     }  
   
- 
+} 
  
   
 // Treppe    ----------------------------------------------------------
 
+#declare treppe =
+
+union{
+
 box { <0.86, 0.00, -0.66>, <1.61, 0.10, -0.60> 
        
-        texture { pigment{ color White } //  light orange
-                // normal { bumps 0.5 scale 0.05 }
-                   finish { phong 1 reflection 0.00}
-                 } // end of texture 
+        texture { buildingcolor2} // end of texture 
  
                // end of texture                                  
     } 
  
 box { <0.86, 0.00, -0.71>, <1.61, 0.05, -0.60> 
        
-        texture { pigment{ color White } //  light orange
-                // normal { bumps 0.5 scale 0.05 }
-                   finish { phong 1 reflection 0.00}
-                 } // end of texture 
+        texture { buildingcolor2} // end of texture 
  
                // end of texture                                  
     } 
 
-
+}
  
 // SALOON_Schild  ---------------------------------------------------------------
+
+#declare schild_sal =
+
+merge{
 
 intersection{
 
@@ -250,13 +243,22 @@ text{
   } 
  
  
+} 
  
+#declare saloon =
+
+union{
+
+    object {boden}
+    object {koerper_sal}
+    object {vordach_sal}
+    object {balken_sal}
+    object {treppe}
+    object {schild_sal} 
  
+     }
  
- 
- 
- 
- 
+
 
 
 //------------------------------------- end 
