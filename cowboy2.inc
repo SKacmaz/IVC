@@ -146,6 +146,13 @@ union{
   object{bein rotate<0,0,0> translate<0,0,0> }
                     
 
+#declare beinbewl =
+  object{bein rotate<15,0,0> rotate<-30*sin( clock*2*pi),0,0> translate<0,0,0> }
+
+#declare beinbewr =
+  object{bein rotate<-15,0,0> rotate<30*sin( clock*2*pi),0,0> translate<0,0,0> }  
+
+
 
 #declare armr =
 union{                                                   
@@ -254,13 +261,30 @@ union{
   
 }
 
+#declare bodyklotzbeinbewegung =
+union{
+                                                   
+  object{hemd  rotate<0,0,0> translate<0,2,0> }
+  object{hose  rotate<0,0,0> translate<0,0,0> }
+  object{beinbewl  rotate<0,0,0> translate<1.5,0,1> }
+  object{beinbewr  rotate<0,0,0> translate<4.5,0,1> }
+  object{armr  rotate<(90*clock),0,0> translate<0,5,0.8> }
+  object{arml  rotate<0,180,0> translate<6.5,5,0.8> }
+  object{hals rotate<0,0,0> translate<3.25,6,0.8>}
+  object{kopfklotz rotate<0,0,0> translate<2.25,6.5,0> }
+  
+}
+
 
 #declare cowboy2 =                                                  
   object{bodyklotz  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }
   
 
 #declare cowboy2bew =                                                  
-  object{bodyklotzbewegung  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }
+  object{bodyklotzbewegung  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }    
+  
+#declare cowboy2beinbew =                                                  
+  object{bodyklotzbeinbewegung  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }
 
 
 

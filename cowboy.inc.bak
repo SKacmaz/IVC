@@ -22,8 +22,8 @@ global_settings{ assumed_gamma 1.0 }
 #include "hut.inc"
 
 #declare T0 = texture { T_Wood19 }
-#declare hemdfarbe1 = color rgb<0.1, 0.1, 0.1>;
-#declare hosenfarbe1 = Black;
+#declare hemdfarbe1 = color rgb<0.9, 0.9, 0.9>;
+#declare hosenfarbe1 = color red 0.647059 green 0.164706 blue 0.064706;
 #declare schuhfarbe1 = VeryDarkBrown;
 #declare haut = color rgb<0.402 ,0.209 , 0.064>;
 
@@ -69,7 +69,8 @@ cylinder { <0, 0,  0>,
 #declare hose   =  
 box { <0, 0, 0>,
       <5, 2,  2>
-      pigment{hosenfarbe1}}
+      pigment{hosenfarbe1}
+      }
       
 #declare hemd   =  
 box { <0, 0, 0>,
