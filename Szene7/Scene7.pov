@@ -84,26 +84,3 @@ object{Stadt rotate<0,-90,0>}
 
 
 
-#declare Camera_Scene01 = camera {/*ultra_wide_angle*/ angle 90        // top view
-                            location  <4.0 , 1.0 ,-6.0>
-                            right     x*image_width/image_height
-                            look_at   <4.0 , 1.0 , 0.0>}
-                            
-
-                            
-                            
-
-
-#if (clock<10)
-camera{Camera_Scene01  translate<0,0,clock>}
-#else
-
-#declare Camera_Scene02 = camera {/*ultra_wide_angle*/ angle 90        // top view
-                            location  <4.0 , 1.0 ,4.0>
-                            right     x*image_width/image_height
-                            look_at   <4.0 , 1.0  , 10.0> rotate<0,90*(clock-10),0>}
-
-camera{Camera_Scene02  translate<0,0,clock>}
-
-#end
-
