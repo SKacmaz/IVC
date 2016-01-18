@@ -10,12 +10,13 @@ global_settings{assumed_gamma 1.0}
 #include "hoboshop.inc"
 #include "ammunation.inc"
 #include "thriftshop.inc"
+#include "schild.inc"
 
 
 //------------------------------------------
 // camera ----------------------------------
-camera{ location  <-8, 0.7 ,-4>
-        look_at   <30.0 , 0.7 , -5>
+camera{ location  <5, 0.7 ,-6>
+        look_at   <5.0 , 0.7 , -7>
         right x*image_width/image_height
         angle 75 }
 // sun -------------------------------------
@@ -60,7 +61,9 @@ object{hoboshop scale <0.7, 0.7, 0.7>  translate <11.5, 0, 0>}
 object{blancoshieldless scale <0.95, 0.95, 0.95> translate <15, 0, 0>}
 
 object{blancoshieldless scale <0.85, 0.85, 0.85> translate <18, 0, 0>}
-
+ 
+ 
+object{schild rotate <0, 180, 0> scale <0.3, 0.3, 0.3> translate <4.7, 0, -7.25>} 
 
 
 object{thriftshop rotate <0, 180, 0> translate <-1, 0, -8>}  

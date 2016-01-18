@@ -10,11 +10,10 @@ global_settings{assumed_gamma 1.0}
 #include "hoboshop.inc"
 #include "ammunation.inc"
 #include "thriftshop.inc"
+#include "schild.inc"
+
 
 // ------------------------------------------------------------------------------------
-
-#declare Stadt =
-union{
 
 object{ammunation scale <0.8, 0.8, 0.8> translate <-2, 0, 0>}
 
@@ -29,7 +28,9 @@ object{hoboshop scale <0.7, 0.7, 0.7>  translate <11.5, 0, 0>}
 object{blancoshieldless scale <0.95, 0.95, 0.95> translate <15, 0, 0>}
 
 object{blancoshieldless scale <0.85, 0.85, 0.85> translate <18, 0, 0>}
-
+ 
+ 
+object{schild rotate <0, 180, 0> scale <0.3, 0.3, 0.3> translate <4.7, 0, -7.25>} 
 
 
 object{thriftshop rotate <0, 180, 0> translate <-1, 0, -8>}  
@@ -47,4 +48,4 @@ object{hoboshop scale <0.7, 0.7, 0.7> rotate <0, 180, 0> translate <15, 0, -8>}
 object{blancoshieldless rotate <0, 180, 0> scale <0.95, 0.95, 0.95> translate <19, 0, -8>  }
 
 
-}
+
