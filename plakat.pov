@@ -82,7 +82,7 @@ plane{ <0,1,0>, 0
   object{cowboy2bew  rotate<0,0,0> translate<0,0,2>  }
   
                                        
-  object{cowboy1bew  rotate<0,180,0> translate<0,0,0>  }
+  object{cowboy1bew  rotate<0,180,0> translate<1,0,0>  }
   
 
 

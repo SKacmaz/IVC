@@ -296,7 +296,7 @@ union{
 
 
 #declare cowboy2 =                                                  
-  object{bodyklotz  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }
+  object{bodyklotz  rotate<0,0,0> translate<0,5,0> scale <0.2,0.2,0.2> }
   
 
 

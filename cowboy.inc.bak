@@ -71,11 +71,25 @@ box { <0, 0, 0>,
       <5, 2,  2>
       pigment{hosenfarbe1}
       }
+
+#declare sherrifstar =
+box      { <0, 0, 0.0>,
+           < 1.0, 1.0,  0.001>
+            pigment{image_map { png "sherrif_star.png" }}
+            scale 1
+            translate <-1.15, 0.8, 0>  } 
+
       
-#declare hemd   =  
+#declare hemds   =  
 box { <0, 0, 0>,
       <5, 4,  2>
-      pigment{hemdfarbe1}}        
+      pigment{hemdfarbe1}}
+      
+#declare hemd   =  
+union{
+  object{hemds scale <0,0,0> translate<0,0,0>}
+  object{sherrifstar scale <0,0,0> translate<4.5,1.5,0>}
+    }          
 
 #declare schultergelenk   =  
 sphere{ <0,0,0>, 0.6
@@ -151,6 +165,12 @@ union{
   object{bein rotate<0,0,0> translate<0,0,0> }
                     
 
+#declare beinbewl =
+  object{bein rotate<15,0,0> rotate<-30*sin( clock*2*pi),0,0> translate<0,0,0> }
+
+#declare beinbewr =
+  object{bein rotate<-15,0,0> rotate<30*sin( clock*2*pi),0,0> translate<0,0,0> }  
+
 
 #declare armr =
 union{                                                   
@@ -188,6 +208,8 @@ sphere { <0, 0, 0>, 0.1
 #declare nase2   =  
 sphere { <0, 0, 0>, 0.1
       pigment{Black}}
+
+
 
 
 
@@ -233,7 +255,37 @@ union{
   object{hals rotate<0,0,0> translate<2.5,6,0.8>}
   object{kopfrund rotate<0,0,0> translate<2.5,7.5,1> }
   
-}    
+}
+
+#declare bodyrundbeinbew =
+union{
+                                                   
+  object{hemd  rotate<0,0,0> translate<0,2,0> }
+  object{hose  rotate<0,0,0> translate<0,0,0> }
+  object{beinbewl  rotate<0,0,0> translate<1.3,0,1> }
+  object{beinbewr  rotate<0,0,0> translate<3.7,0,1> }
+  object{armr  rotate<0,0,0> translate<0,5,0.8> }
+  object{arml  rotate<0,180,0> translate<5,5,0.8> }
+  object{hals rotate<0,0,0> translate<2.5,6,0.8>}
+  object{kopfrund rotate<0,0,0> translate<2.5,7.5,1> }
+  
+}
+
+#declare bodyrundkopfbew =
+union{
+                                                   
+  object{hemd  rotate<0,0,0> translate<0,2,0> }
+  object{hose  rotate<0,0,0> translate<0,0,0> }
+  object{bein  rotate<0,0,0> translate<1.3,0,1> }
+  object{bein  rotate<0,0,0> translate<3.7,0,1> }
+  object{armr  rotate<0,0,0> translate<0,5,0.8> }
+  object{arml  rotate<0,180,0> translate<5,5,0.8> }
+  object{hals rotate<0,0,0> translate<2.5,6,0.8>}
+  object{kopfrund rotate<0,45*clock,0> translate<2.5,7.5,1> }
+  
+}     
+
+
 
 
 #declare cowboy1 =                                                   
@@ -242,8 +294,11 @@ union{
 #declare cowboy1bew =                                                   
   object{bodyrundbew  rotate<0,0,0> translate<0,6,5> scale <0.2,0.2,0.2> }
   
+#declare cowboy1beinbew =                                                   
+  object{bodyrundbeinbew  rotate<0,0,0> translate<0,6,5> scale <0.2,0.2,0.2> }
 
-
+#declare cowboy1kopfbew =                                                   
+  object{bodyrundkopfbew  rotate<0,0,0> translate<0,6,5> scale <0.2,0.2,0.2> }
 
 
 
