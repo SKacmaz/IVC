@@ -11,10 +11,20 @@ global_settings{assumed_gamma 1.0}
 #declare board_length = 0.25;
 #declare board_width = 1.5;
 
-#declare buildingcolor1 = texture {T_Wood7
+#declare buildingcolor2 = texture {T_Wood7
 		                normal {wood 0.5 scale 0.05 turbulence 0.1 rotate<0,0,0> }
 		                finish {phong 1}
 		                rotate<0,0,0> scale 0.5 translate<0,0,0>};
+
+#declare buildingcolor_2 =  texture{ T_Wood11    
+                normal { wood 0.5 scale 0.05 turbulence 0.0 rotate<0,90,0> }
+                finish { phong 1 } 
+                rotate<0,0,0> scale 0.5 translate<0,0,0>
+              } // end of texture 
+
+
+ 
+
 // Saloon-Körper ----------------------------------------------------------
 #declare koerper=
 
@@ -24,7 +34,7 @@ merge{
                                    
     box { <0.00, 0.00, 0.00>,< 2.30, 2.20, 2.70>
     
-        texture { buildingcolor1}
+        texture { buildingcolor_2}
 
           // scale <1,1,1> rotate<0,0,0> translate<0,0,0> 
         } // end of box --------------------------------------
@@ -50,7 +60,7 @@ merge{
 
   // Tür ----
 
-    box { <1.00, 0.00, 0.00>, <1.47, 0.50, 0.10>   
+    box { <1.00, 0.00, 0.00>, <1.47, 0.70, 0.10>   
         
           texture { pigment{ color White transmit 1 } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
@@ -97,7 +107,7 @@ merge{
 #declare vordach=
 box { <0.00, 1.05, -0.60>, <2.30, 1.10, 0.00> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_2} // end of texture 
  
                // end of texture                                  
     }       
@@ -109,7 +119,7 @@ union {
 
 box { <2.24, 1.05, -0.60>, <2.29, 0.00, -0.55> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_2} // end of texture 
  
                // end of texture                                  
     }  
@@ -118,7 +128,7 @@ box { <2.24, 1.05, -0.60>, <2.29, 0.00, -0.55>
 
 box { <0.01, 1.05, -0.60>, <0.06, 0.00, -0.55> 
        
-        texture {buildingcolor1} // end of texture 
+        texture {buildingcolor_2} // end of texture 
  
                // end of texture                                  
     } 
@@ -127,7 +137,7 @@ box { <0.01, 1.05, -0.60>, <0.06, 0.00, -0.55>
 
 box { <0.81, 1.05, -0.60>, <0.86, 0.00, -0.55> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_2} // end of texture 
  
                // end of texture                                  
     }  
@@ -137,7 +147,7 @@ box { <0.81, 1.05, -0.60>, <0.86, 0.00, -0.55>
 
 box { <1.61, 1.05, -0.60>, <1.66, 0.00, -0.55> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_2} // end of texture 
  
                // end of texture                                  
     }  
@@ -177,7 +187,7 @@ union{
 #local GBalken =
 box { <0.00, 1.10, -0.60>, <0.03, 1.35, -0.57> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_2} // end of texture 
  
                // end of texture                                  
     }
@@ -197,21 +207,21 @@ box { <0.00, 1.10, -0.60>, <0.03, 1.35, -0.57>
 
 box { <0.00, 1.35, -0.60>, <2.30, 1.38, -0.57> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_2} // end of texture 
  
                // end of texture                                  
     }
 
 box { <2.27, 1.35, -0.57>, <2.30, 1.38, 0.00> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_2} // end of texture 
  
                // end of texture                                  
     }
 
 box { <0.00, 1.35, -0.57>, <0.03, 1.38, 0.00> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_2} // end of texture 
  
                // end of texture                                  
     }

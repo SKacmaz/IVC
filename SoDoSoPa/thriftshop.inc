@@ -15,6 +15,14 @@ global_settings{assumed_gamma 1.0}
 		                normal {wood 0.5 scale 0.05 turbulence 0.1 rotate<0,0,0> }
 		                finish {phong 1}
 		                rotate<0,0,0> scale 0.5 translate<0,0,0>};
+
+#declare buildingcolor_thrift = texture{ T_Wood20 scale 3   
+                             normal { wood 0.5 scale 0.05 turbulence 0.1 rotate<0,0,0> }
+                             finish { phong 1 } 
+                                      rotate<0,0,0> scale 0.5 translate<0,0,0>
+                                  }       
+
+
 // Saloon-Körper ----------------------------------------------------------
 #declare koerper=
 
@@ -24,7 +32,7 @@ merge{
                                    
     box { <0.00, 0.00, 0.00>,< 2.30, 2.20, 2.70>
     
-        texture { buildingcolor1}
+        texture { buildingcolor_thrift}
 
           // scale <1,1,1> rotate<0,0,0> translate<0,0,0> 
         } // end of box --------------------------------------
@@ -50,7 +58,7 @@ merge{
 
   // Tür ----
 
-    box { <1.00, 0.00, 0.00>, <1.47, 0.50, 0.10>   
+    box { <1.00, 0.00, 0.00>, <1.47, 0.70, 0.10>   
         
           texture { pigment{ color White transmit 1 } //  light orange
                 // normal { bumps 0.5 scale 0.05 }
@@ -97,7 +105,7 @@ merge{
 #declare vordach=
 box { <0.00, 1.05, -0.60>, <2.30, 1.10, 0.00> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_thrift} // end of texture 
  
                // end of texture                                  
     }       
@@ -109,7 +117,7 @@ union {
 
 box { <2.24, 1.05, -0.60>, <2.29, 0.00, -0.55> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_thrift} // end of texture 
  
                // end of texture                                  
     }  
@@ -118,7 +126,7 @@ box { <2.24, 1.05, -0.60>, <2.29, 0.00, -0.55>
 
 box { <0.01, 1.05, -0.60>, <0.06, 0.00, -0.55> 
        
-        texture {buildingcolor1} // end of texture 
+        texture {buildingcolor_thrift} // end of texture 
  
                // end of texture                                  
     } 
@@ -127,7 +135,7 @@ box { <0.01, 1.05, -0.60>, <0.06, 0.00, -0.55>
 
 box { <0.81, 1.05, -0.60>, <0.86, 0.00, -0.55> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_thrift} // end of texture 
  
                // end of texture                                  
     }  
@@ -137,7 +145,7 @@ box { <0.81, 1.05, -0.60>, <0.86, 0.00, -0.55>
 
 box { <1.61, 1.05, -0.60>, <1.66, 0.00, -0.55> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_thrift} // end of texture 
  
                // end of texture                                  
     }  
@@ -177,7 +185,7 @@ union{
 #local GBalken =
 box { <0.00, 1.10, -0.60>, <0.03, 1.35, -0.57> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_thrift} // end of texture 
  
                // end of texture                                  
     }
@@ -197,21 +205,21 @@ box { <0.00, 1.10, -0.60>, <0.03, 1.35, -0.57>
 
 box { <0.00, 1.35, -0.60>, <2.30, 1.38, -0.57> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_thrift} // end of texture 
  
                // end of texture                                  
     }
 
 box { <2.27, 1.35, -0.57>, <2.30, 1.38, 0.00> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_thrift} // end of texture 
  
                // end of texture                                  
     }
 
 box { <0.00, 1.35, -0.57>, <0.03, 1.38, 0.00> 
        
-        texture { buildingcolor1} // end of texture 
+        texture { buildingcolor_thrift} // end of texture 
  
                // end of texture                                  
     }
@@ -244,20 +252,11 @@ box { <0.55, 1.95, -0.005>, <1.85, 2.45, 0.00>
 
 box { <0.65, 2.00, -0.006>, <1.75, 2.40, 0.00> inverse
 
-            texture { pigment{ wood turbulence 0.02 octaves 4 lambda 3
-                     scale 0.175  rotate <2, 3, 0> 
-                     color_map {
-                        [0.0 color rgb <1.00, 0.88, 0.54>]
-                        [0.1 color rgb <1.00, 0.80, 0.54>]
-                        [0.5 color rgb <0.70, 0.42, 0.23>]
-                        [0.7 color rgb <0.70, 0.42, 0.23>]
-                        [1.0 color rgb <1.00, 0.88, 0.54>]
-                     }// end of color_map
-                   } // end of pigment
-            // normal { agate 0.5 scale 0.25} 
-            finish { phong 1 } 
-            rotate <0,0, 0>  scale 1  translate <0,0,0>
-        } // end of texture
+             texture{ T_Wood30    
+                normal { wood 0.5 scale 0.05 turbulence 0.0 rotate<0,0,0> }
+                finish { phong 1 } 
+                rotate<0,0,0> scale 0.5 translate<0,0,0>
+              } // end of texture 
    }
 }
 

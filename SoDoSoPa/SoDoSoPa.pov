@@ -14,12 +14,13 @@ global_settings{assumed_gamma 1.0}
 
 //------------------------------------------
 // camera ----------------------------------
-camera{ location  <-8, 2 ,-4>
-        look_at   <30.0 , 2 , -5>
+camera{ location  <-8, 0.7 ,-4>
+        look_at   <30.0 , 0.7 , -5>
         right x*image_width/image_height
         angle 75 }
 // sun -------------------------------------
-light_source{<1000,3000,-2500> color White}  
+light_source{<1000,3000,2500> color White} 
+//light_source{<-3000,3000,00> color White}  
 // sky ---------------------------------------------------------------------
 sky_sphere { pigment { gradient <0,1,0>
                        color_map { [0.00 rgb <1.0,1.0,1.0>]
