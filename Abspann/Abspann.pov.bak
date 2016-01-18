@@ -70,9 +70,58 @@ text{
             diffuse 0.85}
           }
    translate<0,-3.5,0> }     
-      
-      
-  
+//-----------------------------------
+text{
+   ttf "arial.ttf",
+   "Regisseur",0.2, 0
+   texture{
+     pigment{color White}
+     finish{ambient 0.15
+            diffuse 0.85}
+          }
+     scale <1.4, 1.4, 1>
+     translate<0.6,-6,0> }
+
+text{
+   ttf "arial.ttf",
+   "Quentin Tarantino",0.2, 0
+   texture{
+     pigment{color White}
+     finish{ambient 0.15
+            diffuse 0.85}
+          }
+   translate<0,-7.5,0> }      
+// ------------------------------------      
+text{
+   ttf "arial.ttf",
+   "Hauptdarsteller",0.2, 0
+   texture{
+     pigment{color White}
+     finish{ambient 0.15
+            diffuse 0.85}
+          }
+     scale <1.4, 1.4, 1>
+     translate<-1,-10,0> }
+
+text{
+   ttf "arial.ttf",
+   "Rodrigo Morales",0.2, 0
+   texture{
+     pigment{color White}
+     finish{ambient 0.15
+            diffuse 0.85}
+          }
+   translate<0,-11.5,0> }  
+
+text{
+   ttf "arial.ttf",
+   "FeelsBadMan",0.2, 0
+   texture{
+     pigment{color White}
+     finish{ambient 0.15
+            diffuse 0.85}
+          }
+   translate<0,-12.5,0> }
       
       
       

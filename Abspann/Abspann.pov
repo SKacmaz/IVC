@@ -12,7 +12,7 @@ global_settings{assumed_gamma 1.0}
 camera{ location  <3.5, 0 ,-8>
         look_at   <3.5 , 0 , 0>
         right x*image_width/image_height
-        angle 75 }
+        angle 80 }
 // sun -------------------------------------
 light_source{<1000,5,-2500> color White}  
 // -------------------------------------------------
@@ -32,15 +32,15 @@ global_settings { charset utf8 }
 
 text{
    ttf "arial.ttf",
-   "Drehbuch",0.2, 0
+   "Nach einer Idee von",0.2, 0
    texture{
      pigment{color White}
      finish{ambient 0.15
             diffuse 0.85}
           }
-     scale <1.4, 1.4, 1>
-     translate<0.6,0,0> }
-      
+     scale <1.2, 1.2, 1>
+     translate<-2,-5,0> } 
+     
 text{
    ttf "arial.ttf",
    "Bennet Brunsen",0.2, 0
@@ -49,8 +49,8 @@ text{
      finish{ambient 0.15
             diffuse 0.85}
           }
-   translate<0,-1.5,0> } 
-
+   translate<0,-6.5,0> }
+   
 text{
    ttf "arial.ttf",
    "Semih Kacmaz",0.2, 0
@@ -59,7 +59,7 @@ text{
      finish{ambient 0.15
             diffuse 0.85}
           }
-   translate<0,-2.5,0> }
+   translate<0,-7.5,0> }
 
 text{
    ttf "arial.ttf",
@@ -69,28 +69,90 @@ text{
      finish{ambient 0.15
             diffuse 0.85}
           }
-   translate<0,-3.5,0> }     
-//-----------------------------------
+   translate<0,-8.5,0> }
+
+
 text{
    ttf "arial.ttf",
-   "Regisseur",0.2, 0
+   "Umsetzung",0.2, 0
    texture{
      pigment{color White}
      finish{ambient 0.15
             diffuse 0.85}
           }
      scale <1.4, 1.4, 1>
-     translate<0.6,-6,0> }
-
+     translate<0,-11,0> }
+      
 text{
    ttf "arial.ttf",
-   "Quentin Tarantino",0.2, 0
+   "Bennet Brunsen",0.2, 0
    texture{
      pigment{color White}
      finish{ambient 0.15
             diffuse 0.85}
           }
-   translate<0,-7.5,0> }      
+   translate<0,-12.5,0> } 
+
+text{
+   ttf "arial.ttf",
+   "Semih Kacmaz",0.2, 0
+   texture{
+     pigment{color White}
+     finish{ambient 0.15
+            diffuse 0.85}
+          }
+   translate<0,-13.5,0> }
+
+text{
+   ttf "arial.ttf",
+   concat ("Chris Kreu", chr(223), "ler"),0.2, 0
+   texture{
+     pigment{color White}
+     finish{ambient 0.15
+            diffuse 0.85}
+          }
+   translate<0,-14.5,0> }     
+//-----------------------------------
+text{
+   ttf "arial.ttf",
+   "Regie",0.2, 0
+   texture{
+     pigment{color White}
+     finish{ambient 0.15
+            diffuse 0.85}
+          }
+     scale <1.4, 1.4, 1>
+     translate<1.6,-17,0> }
+
+text{
+   ttf "arial.ttf",
+   "Bennet Brunsen",0.2, 0
+   texture{
+     pigment{color White}
+     finish{ambient 0.15
+            diffuse 0.85}
+          }
+   translate<0,-18.5,0> }
+   
+text{
+   ttf "arial.ttf",
+   "Semih Kacmaz",0.2, 0
+   texture{
+     pigment{color White}
+     finish{ambient 0.15
+            diffuse 0.85}
+          }
+   translate<0,-19.5,0> }
+
+text{
+   ttf "arial.ttf",
+   concat ("Chris Kreu", chr(223), "ler"),0.2, 0
+   texture{
+     pigment{color White}
+     finish{ambient 0.15
+            diffuse 0.85}
+          }
+   translate<0,-20.5,0> }      
 // ------------------------------------      
 text{
    ttf "arial.ttf",
@@ -101,7 +163,7 @@ text{
             diffuse 0.85}
           }
      scale <1.4, 1.4, 1>
-     translate<-1,-10,0> }
+     translate<-1,-23,0> }
 
 text{
    ttf "arial.ttf",
@@ -111,20 +173,39 @@ text{
      finish{ambient 0.15
             diffuse 0.85}
           }
-   translate<0,-11.5,0> }  
+   translate<0,-24.5,0> }  
 
 text{
    ttf "arial.ttf",
-   "FeelsBadMan",0.2, 0
+   "Sheriff McPov",0.2, 0
    texture{
      pigment{color White}
      finish{ambient 0.15
             diffuse 0.85}
           }
-   translate<0,-12.5,0> }
-      
-      
-      
-      }
+   translate<0,-25.5,0> }
+//-----------------------------------------
+
+text{
+   ttf "arial.ttf",
+   "Musik",0.2, 0
+   texture{
+     pigment{color White}
+     finish{ambient 0.15
+            diffuse 0.85}
+          }
+     scale <1.4, 1.4, 1>
+     translate<1.6,-28,0> }    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
       
 object {Abspann translate <0,5*clock,0> }
