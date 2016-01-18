@@ -19,6 +19,7 @@ global_settings{ assumed_gamma 1.0 }
 #include "math.inc"
 #include "transforms.inc"
 #include "waffe.inc"
+#include "hut.inc"
 
 #declare T0 = texture { T_Wood19 }
 #declare hemdfarbe1 = color rgb<0.1, 0.1, 0.1>;
@@ -277,14 +278,14 @@ union{
 
 
 #declare cowboy2 =                                                  
-  object{bodyklotz  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }
+  object{bodyklotz  rotate<0,0,0> translate<0,5,0> scale <0.2,0.2,0.2> }
   
 
 #declare cowboy2bew =                                                  
-  object{bodyklotzbewegung  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }    
+  object{bodyklotzbewegung  rotate<0,0,0> translate<0,5,0> scale <0.2,0.2,0.2> }    
   
 #declare cowboy2beinbew =                                                  
-  object{bodyklotzbeinbewegung  rotate<0,0,0> translate<0,6,0> scale <0.2,0.2,0.2> }
+  object{bodyklotzbeinbewegung  rotate<0,0,0> translate<0,5,0> scale <0.2,0.2,0.2> }
 
 
 

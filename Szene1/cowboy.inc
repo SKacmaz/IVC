@@ -289,16 +289,16 @@ union{
 
 
 #declare cowboy1 =                                                   
-  object{bodyrund  rotate<0,0,0> translate<0,6,5> scale <0.2,0.2,0.2> }
+  object{bodyrund  rotate<0,0,0> translate<0,5,0> scale <0.2,0.2,0.2> }
   
 #declare cowboy1bew =                                                   
-  object{bodyrundbew  rotate<0,0,0> translate<0,6,5> scale <0.2,0.2,0.2> }
+  object{bodyrundbew  rotate<0,0,0> translate<0,5,0> scale <0.2,0.2,0.2> }
   
 #declare cowboy1beinbew =                                                   
-  object{bodyrundbeinbew  rotate<0,0,0> translate<0,6,5> scale <0.2,0.2,0.2> }
+  object{bodyrundbeinbew  rotate<0,0,0> translate<0,5,0> scale <0.2,0.2,0.2> }
 
 #declare cowboy1kopfbew =                                                   
-  object{bodyrundkopfbew  rotate<0,0,0> translate<0,6,5> scale <0.2,0.2,0.2> }
+  object{bodyrundkopfbew  rotate<0,0,0> translate<0,5,0> scale <0.2,0.2,0.2> }
 
 
 
