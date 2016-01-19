@@ -20,33 +20,36 @@ global_settings{ assumed_gamma 1.0 }
 #include "transforms.inc"
 #include "cowboy.inc"
 #include "cowboy2.inc"  
-#include "SoDoSoPainc.inc"
+#include "SoDoSoPa.inc"
 
 
 
 //--------------------------------------------------------------------------
 // camera ------------------------------------------------------------------
 //cowboyrund
-#declare Camera_0 = camera {/*ultra_wide_angle*/ angle 75      // front view
-                            location  <0.0 , 2.0 ,1.0>
+#declare Camera_0 = camera {/*ultra_wide_angle*/ angle 90      // front view
+                            location  <4.0 , 20.0 ,8.0>
                             right     x*image_width/image_height
-                            look_at   <0.0 , 2.0 , 0.0>}
+                            look_at   <4.0 , 2.0 , 8.0>}
                             
 //plakat                            
 #declare Camera_1 = camera {/*ultra_wide_angle*/ angle 110   // diagonal view
-                            location  <1.0 , 2.0 ,-2.0>
+                            location  <4.0 , 1.0 , 8.0>
                             right     x*image_width/image_height
-                            look_at   <0.0 , 2.0 , 0.0>}
+                            look_at   <4.0 , 1.0 , 9.0>}
                             
 //cowboyklotz                            
-#declare Camera_2 = camera {/*ultra_wide_angle*/ angle 90 // right side view
-                            location  <1.0 , 2.0 , 0.0>
+#declare Camera_2 = camera {/*ultra_wide_angle*/ angle 120 // right side view
+                            location  <4.0 , 1.0 , 8.0>
                             right     x*image_width/image_height
-                            look_at   <0.0 , 2.0 , 2.0>}
-#declare Camera_3 = camera {/*ultra_wide_angle*/ angle 90        // top view
-                            location  <0.0 , 3.0 ,-0.001>
+                            look_at   <4.0 , 1.0 , 7.0>} 
+                            
+                            
+                            
+#declare Camera_3 = camera {/*ultra_wide_angle*/ angle 95        // top view
+                            location  <1.0 , 1.5 ,4.2>
                             right     x*image_width/image_height
-                            look_at   <0.0 , 1.0 , 0.0>}
+                            look_at   <3.0 , 1.2 ,4.2>}
 
 
 // sun ---------------------------------------------------------------------
@@ -82,5 +85,19 @@ plane{ <0,1,0>, 0
 
 object{Stadt rotate<0,-90,0>}
 
+object{cowboy1  scale<0.2,0.2,0.2> translate<4.45,0,6> }
+
+object{cowboy2 rotate<0,180,0> scale<0.2,0.2,0.2> translate<4.5,0,2>}
+
+
+
+
+#declare Camera_4 = camera {/*ultra_wide_angle*/ angle 95        // top view
+                            location  <0.0 , 0.0 ,0.0>
+                            right     x*image_width/image_height
+                            look_at   <0.0 , 0.0 ,1.0>}
+
+
+camera{Camera_4 rotate<0,0,0>  translate<4.55,0.5,4> translate<0,0,1/5*clock>} 
 
 
