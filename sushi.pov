@@ -106,7 +106,4 @@ difference{
 }
 
 #declare sushishow   = 
-  object{sushi rotate<90,0,0> translate<0,1.5,0> scale<0.2,0.2,0.2>}
- 
-
-sushishow
+  object{sushi rotate<90,0,0>}
