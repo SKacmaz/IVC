@@ -15,6 +15,9 @@ global_settings{assumed_gamma 1.0}
 
 // ------------------------------------------------------------------------------------
 
+#declare Stadt =
+union{
+
 object{ammunation scale <0.8, 0.8, 0.8> translate <-2, 0, 0>}
 
 object{blancobuilding translate <1, 0, 0>}
@@ -48,4 +51,4 @@ object{hoboshop scale <0.7, 0.7, 0.7> rotate <0, 180, 0> translate <15, 0, -8>}
 object{blancoshieldless rotate <0, 180, 0> scale <0.95, 0.95, 0.95> translate <19, 0, -8>  }
 
 
-
+}

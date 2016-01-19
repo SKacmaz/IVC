@@ -20,7 +20,7 @@ global_settings{ assumed_gamma 1.0 }
 #include "transforms.inc"
 #include "cowboy.inc"
 #include "cowboy2.inc"  
-#include "SoDoSoPainc.inc"
+#include "SoDoSoPa.inc"
 
 
 
@@ -86,25 +86,19 @@ object{Stadt rotate<0,-90,0>}
 
 
 #declare Camera_Scene01 = camera {/*ultra_wide_angle*/ angle 90        // top view
-                            location  <4.0 , 1.0 ,-6.0>
+                            location  <0.0 , 1.0 , 0.0>
                             right     x*image_width/image_height
-                            look_at   <4.0 , 1.0 , 0.0>}
+                            look_at   <0.0 , 1.0 , 1.0>}
                             
 
-                            
-                            
-
-
+                                                        
 #if (clock<10)
-camera{Camera_Scene01  translate<0,0,clock>}
-#else
-
-#declare Camera_Scene02 = camera {/*ultra_wide_angle*/ angle 90        // top view
-                            location  <4.0 , 1.0 ,4.0>
-                            right     x*image_width/image_height
-                            look_at   <4.0 , 1.0  , 10.0> rotate<0,90*(clock-10),0>}
-
-camera{Camera_Scene02  translate<0,0,clock>}
-
+camera{Camera_Scene01 translate<4,0,-7>  translate<0,0,clock>}
+#end
+#if (clock>=10 & clock<13)
+camera{Camera_Scene01 rotate<0,-93*(clock-10),0> translate<4,0,3>  }
 #end
 
+#if (clock>=13 )
+camera{Camera_Scene01 rotate<0,-270,0> translate<4,0,3> translate<4/5*(clock-13),(-1/5*(clock-13)),6/11*(clock-13)>  }
+#end
