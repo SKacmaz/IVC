@@ -86,9 +86,9 @@ plane{ <0,1,0>, 0
 
 object{Stadt rotate<0,-90,0>}
 
-object{cowboy1beinbew  scale<0.2,0.2,0.2> translate<4.5,0,11> translate<0,0,-clock> }
+object{cowboy1beinbew  scale<0.2,0.2,0.2> translate<4.45,0,11> translate<0,0,-clock> }
 
-object{cowboy2beinbew rotate<0,180,0> scale<0.2,0.2,0.2> translate<4.8,0,-3> translate<0,0,clock> }
+object{cowboy2beinbew rotate<0,180,0> scale<0.2,0.2,0.2> translate<4.5,0,-3> translate<0,0,clock> }
 
 
 
