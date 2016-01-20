@@ -59,21 +59,21 @@ box      { <-1.25, 0.75, -0.15>,
 
 #declare wanted1 =
 box      { <-0, 0, -0.2>,
-           < 1, 1.05,  -0.201>
+           < 0.85, 1.05,  -0.201>
             pigment{image_map { png "wanted1.png " }}
             scale 1
             translate <-1.15, 0.8, 0>  } 
 
 #declare wanted2 =
 box      { <-0, 0, -0.2>,
-           < 1, 1.05,  -0.201>
+           < 0.85, 1.05,  -0.201>
             pigment{image_map { png "wanted2.png " }}
             scale 1
             translate <-0.2, 0.8, 0>  }   
 
 #declare wanted3 =
 box      { <-0, 0, -0.2>,
-           < 1, 1.0,  -0.201>
+           < 0.8, 1.0,  -0.201>
             pigment{image_map { png "wanted3.png " }}
             scale 1
             translate <0.8, 0.8, 0>  }              
